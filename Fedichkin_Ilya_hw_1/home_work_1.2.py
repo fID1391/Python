@@ -33,5 +33,3 @@ for i in range(len(cube_list)):
     if (summ % 7) == 0:
         summ_var_b += cube_list[i]
 print(summ_var_b)
-
-
