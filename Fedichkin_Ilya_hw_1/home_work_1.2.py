@@ -18,6 +18,6 @@ def funct(arg):
 cube_list = list(i**3 for i in range(1, 1001, 2))
 print(funct(cube_list))
 
-сube_list = list(for i in range(len(cube_list)):
+for i in range(len(cube_list)):
     cube_list[i] += 17
 print(funct(cube_list))
