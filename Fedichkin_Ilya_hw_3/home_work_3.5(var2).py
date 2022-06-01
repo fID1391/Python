@@ -37,8 +37,8 @@ def get_jokes(arg, flag=True, **kwargs):
     :return: list of strings with jokes
     """
     joke_list = []
+    kwargs = copy.deepcopy(kwargs)
     for i in range(arg):
-        kwargs = copy.deepcopy(kwargs)
         joke = (' ' .join([method(value, flag) for value in kwargs.values()]))
         if joke.strip():
             joke_list.append(joke)
