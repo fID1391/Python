@@ -19,12 +19,10 @@ num_dict = {
 
 
 def num_translate_adv(arg):
-    if arg.lower() in num_dict:
-        if arg.istitle():
-            return f'Перевод "{arg}" с аглйиского будет: "{num_dict[arg.lower()].capitalize()}"'
-        else:
-            return f'Перевод "{arg}" с аглйиского будет: "{num_dict[arg]}"'
-    return None
+    translate = num_dict.get(arg)
+    if arg.istitle():
+        translate = translate.capitalize()
+    return f'Перевод "{arg}" с аглйиского будет: "{translate}"'
 
 
 numeric = input('Введите числительное на аглийском языке от нуля до десяти включительно, чтобы увидеть перевод: ')
