@@ -19,7 +19,7 @@ num_dict = {
 
 
 def num_translate_adv(arg):
-    translate = num_dict.get(arg)
+    translate = num_dict.get(arg.lower())
     if arg.istitle():
         translate = translate.capitalize()
     return f'Перевод "{arg}" с аглйиского будет: "{translate}"'
