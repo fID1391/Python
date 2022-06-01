@@ -34,7 +34,8 @@ def get_jokes(arg, flag=True, **kwargs):
 
     :param arg: number of jokes
     :param flag: word uniqueness condition
-    :return: list of strings with jokes
+    :param kwargs: lists of words
+    :return: list of strings with random words from kwargs
     """
     joke_list = []
     kwargs = copy.deepcopy(kwargs)
