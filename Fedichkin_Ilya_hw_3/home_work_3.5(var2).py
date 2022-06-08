@@ -21,12 +21,11 @@ def method(lst, flag):
     """
     if flag and len(lst):
         var = lst.pop(randrange(len(lst)))
-        return var
     elif not flag:
         var = lst[randrange(len(lst))]
-        return var
     else:
-        return ''
+        var = ''
+    return var
 
 
 def get_jokes(arg, flag=True, **kwargs):
