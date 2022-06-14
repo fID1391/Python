@@ -43,7 +43,7 @@ def curency_rates_2(*args):
     for char_code in args:
         char_code = char_code.upper()
         lcl_str_ind_start = content.find(f'<CharCode>{char_code}</CharCode>')
-        if lcl_str_ind_start > 0 :
+        if lcl_str_ind_start > 0:
             lcl_str_ind_stop = content.find('</Value>', lcl_str_ind_start)
             lcl_str_ind_start = content.rfind('>', lcl_str_ind_start, lcl_str_ind_stop) + 1
             value = content[lcl_str_ind_start: lcl_str_ind_stop]
