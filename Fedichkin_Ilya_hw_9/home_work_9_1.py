@@ -44,6 +44,7 @@ if __name__ == '__main__':
                              'q - выход\n'
                              'Введите действие: ')
         if user_control == 'q':
+            new_trafficlight.stop()
             break
         if len(user_control) == 1:
             try:
