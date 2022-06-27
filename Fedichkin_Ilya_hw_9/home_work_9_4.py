@@ -67,10 +67,9 @@ class TownCar(Car):
             print(f'Текущая скорость {self._current_speed}, ограниечение - {self._max_speed}')
 
 
-class SportCar(TownCar, Car):
+class SportCar(Car):
     def __init__(self, speed: int, color: str, name: str):
         super().__init__(speed, color, name)
-        self._max_speed = 90
 
 
 class WorkCar(TownCar, Car):
@@ -112,4 +111,3 @@ car3.turn('прямо')
 car4.turn('назад')
 
 
-some_car = Car('as', 'sd', 'sd')

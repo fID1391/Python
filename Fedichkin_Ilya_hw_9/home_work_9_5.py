@@ -23,7 +23,7 @@ class Pen(Stationery):
         super().__init__(title)
 
     def draw(self):
-        print(f'Отрисовка ручкой {self._title}')
+        print(f'Штрихуем ручкой {self._title}')
 
 
 class Pencil(Stationery):
@@ -31,7 +31,7 @@ class Pencil(Stationery):
         super().__init__(title)
 
     def draw(self):
-        print(f'Отрисовка карандашом {self._title}')
+        print(f'Малюем карандашом {self._title}')
 
 
 class Handle(Stationery):
@@ -39,7 +39,7 @@ class Handle(Stationery):
         super().__init__(title)
 
     def draw(self):
-        print(f'Отрисовка маркером {self._title}')
+        print(f'Рисуем маркером {self._title}')
 
 
 paintbrush = Stationery('Paintbrush')
