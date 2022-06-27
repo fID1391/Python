@@ -15,18 +15,23 @@
 
 class Car:
     def __init__(self, speed: int, color: str, name: str, is_police=False):
-        self._max_speed = 60
         self.color = color
+        self.user_speed = speed
         self.name = name
         self._is_police = is_police
-        self.current_speed = speed
+        self._current_speed = 0
         self._direction = 'прямо'
+        if self._is_police:
+            self._max_speed = 200
+        else:
+            self._max_speed = 60
 
     def go(self):
-        return print(f'Автомобиль {self.name} начал движение со скоростью {self.current_speed}')
+        self._current_speed = self.user_speed
+        return print(f'Автомобиль {self.name} начал движение со скоростью {self._current_speed}')
 
     def stop(self):
-        self.current_speed = 0
+        self._current_speed = 0
         print(f'Автомобиль {self.name} остановлен')
 
     def turn(self, direction='прямо'):
@@ -46,7 +51,7 @@ class Car:
             print(f'Автомобиль {self.name} повернул в обратном направлении')
 
     def show_speed(self):
-        print(f'Скорость автомобиля {self.name} равна {self.current_speed}')
+        print(f'Скорость автомобиля {self.name} равна {self._current_speed}')
 
 
 class TownCar(Car):
@@ -55,11 +60,11 @@ class TownCar(Car):
         self._max_speed = 60
 
     def show_speed(self):
-        if self.current_speed > self._max_speed:
-            print(f'ВНИМАНИЕ! Превышен скоростной лимит. Текущая скорость {self.current_speed},'
+        if self._current_speed > self._max_speed:
+            print(f'ВНИМАНИЕ! Превышен скоростной лимит. Текущая скорость {self._current_speed},'
                   f' ограниечение - {self._max_speed}')
         else:
-            print(f'Текущая скорость {self.current_speed}, ограниечение - {self._max_speed}')
+            print(f'Текущая скорость {self._current_speed}, ограниечение - {self._max_speed}')
 
 
 class SportCar(TownCar, Car):
@@ -84,9 +89,9 @@ car1 = SportCar(120, 'Blue', 'Maserati')
 car2 = WorkCar(60, 'White', 'Largus')
 car3 = TownCar(80, 'Yellow', 'Solaris')
 
-car1.current_speed = 120
-car2.current_speed = 120
-car2.current_speed = 120
+car1.user_speed = 120
+car2.user_speed = 120
+car2.user_speed = 120
 
 car1.go()
 car2.go()
@@ -105,3 +110,6 @@ car1.turn('Направо')
 car2.turn('Налево')
 car3.turn('прямо')
 car4.turn('назад')
+
+
+some_car = Car('as', 'sd', 'sd')
